@@ -2,17 +2,17 @@ import { motion } from "framer-motion";
 
 const inovasiList = [
   {
-    nama: "Tape Original",
+    nama: "Original",
     deskripsi: "Tape singkong manis hasil fermentasi tradisional.",
     img: "/assets/images/tape ketan.jpg",
   },
   {
-    nama: "Bolu Tape",
+    nama: "1",
     deskripsi: "Kue bolu lembut berbahan dasar tape singkong.",
     img: "/assets/images/bolu tape.jpg",
   },
   {
-    nama: "Tape Goreng",
+    nama: "2",
     deskripsi: "Tape digoreng renyah dengan cita rasa khas.",
     img: "/assets/images/tape goreng.jpg",
   },
