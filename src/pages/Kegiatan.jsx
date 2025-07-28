@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Dialog } from "@headlessui/react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Updated data structure with nested sub-programs
@@ -77,60 +78,41 @@ const programData = {
   ],
 };
 
-// Modal Dialog Component
-function Modal({ selected, onClose }) {
-  if (!selected) return null;
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div 
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm" 
-        onClick={onClose}
-        aria-hidden="true" 
-      />
-      <motion.div
-        className="relative w-full max-w-4xl mx-4 bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
-        initial={{ opacity: 0, scale: 0.8, y: 50 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.8, y: 50 }}
-        transition={{ duration: 0.3 }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Header with close button */}
-        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-800 pr-4">
-            {selected.title}
-          </h2>
-          <button
-            onClick={onClose}
-            className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors duration-200"
-          >
-            <span className="text-xl sm:text-2xl text-gray-600 font-light">×</span>
-          </button>
-        </div>
-
-        {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6">
-          <div className="mb-4 sm:mb-6">
-            <img
-              src={selected.images[0]}
-              alt={selected.title}
-              className="w-full max-h-[40vh] sm:max-h-[50vh] object-contain rounded-lg sm:rounded-xl shadow-lg bg-gray-50"
-            />
-          </div>
-          <div className="prose prose-sm sm:prose-base max-w-none">
-            <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed whitespace-pre-wrap">
-              {selected.description}
-            </p>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  );
-}
-
 export default function Kegiatan() {
   const [selected, setSelected] = useState(null);
+  const [clickPosition, setClickPosition] = useState(null);
+
+  const handleItemClick = (item, event) => {
+    // Get click position relative to viewport
+    const rect = event.currentTarget.getBoundingClientRect();
+    const clickPos = {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2 + window.scrollY
+    };
+    
+    setClickPosition(clickPos);
+    setSelected(item);
+  };
+
+  const handleCloseModal = () => {
+    setSelected(null);
+    setTimeout(() => setClickPosition(null), 400);
+  };
+
+  // Calculate initial position based on click position
+  const getInitialTransform = () => {
+    if (!clickPosition) return { x: 0, y: 50 };
+    
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    
+    return {
+      x: (clickPosition.x - centerX) * 0.3,
+      y: (clickPosition.y - centerY) * 0.3
+    };
+  };
+
+  const initialTransform = getInitialTransform();
 
   return (
     <div className="bg-white/90 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 backdrop-blur-sm min-h-screen">
@@ -162,18 +144,22 @@ export default function Kegiatan() {
                       <motion.div
                         key={i}
                         className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100 group"
-                        onClick={() => setSelected(item)}
+                        onClick={(e) => handleItemClick(item, e)}
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: i * 0.05 }}
                         viewport={{ once: true }}
-                        whileHover={{ y: -5 }}
+                        whileHover={{ y: -5, scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
                       >
                         <div className="relative overflow-hidden">
                           <img
                             src={item.images[0]}
                             alt={item.title}
                             className="w-full h-40 sm:h-48 lg:h-52 object-cover group-hover:scale-110 transition-transform duration-500"
+                            onError={(e) => {
+                              e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5YTNhZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
+                            }}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
@@ -197,18 +183,22 @@ export default function Kegiatan() {
                   <motion.div
                     key={index}
                     className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100 group"
-                    onClick={() => setSelected(item)}
+                    onClick={(e) => handleItemClick(item, e)}
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.05 }}
                     viewport={{ once: true }}
-                    whileHover={{ y: -5 }}
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     <div className="relative overflow-hidden">
                       <img
                         src={item.images[0]}
                         alt={item.title}
                         className="w-full h-40 sm:h-48 lg:h-52 object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5YTNhZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
@@ -231,10 +221,101 @@ export default function Kegiatan() {
       {/* Modal Dialog with AnimatePresence */}
       <AnimatePresence>
         {selected && (
-          <Modal 
-            selected={selected} 
-            onClose={() => setSelected(null)} 
-          />
+          <Dialog 
+            open={!!selected} 
+            onClose={handleCloseModal} 
+            className="relative z-50"
+          >
+            {/* Backdrop */}
+            <motion.div 
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm" 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              aria-hidden="true" 
+            />
+            
+            {/* Modal Container */}
+            <div className="fixed inset-0 flex items-center justify-center p-4">
+              <Dialog.Panel>
+                <motion.div
+                  className="w-full max-w-4xl lg:max-w-6xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col relative"
+                  initial={{ 
+                    opacity: 0, 
+                    scale: 0.4, 
+                    x: initialTransform.x, 
+                    y: initialTransform.y,
+                    rotateY: 15
+                  }}
+                  animate={{ 
+                    opacity: 1, 
+                    scale: 1, 
+                    x: 0, 
+                    y: 0,
+                    rotateY: 0
+                  }}
+                  exit={{ 
+                    opacity: 0, 
+                    scale: 0.4, 
+                    x: initialTransform.x, 
+                    y: initialTransform.y,
+                    rotateY: -15
+                  }}
+                  transition={{ 
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 25,
+                    opacity: { duration: 0.3 }
+                  }}
+                >
+                  {/* Close button */}
+                  <button
+                    onClick={handleCloseModal}
+                    className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 hover:bg-white hover:text-red-600 flex items-center justify-center transition-all duration-200 shadow-lg border border-gray-200"
+                    aria-label="Close modal"
+                  >
+                    <span className="text-xl sm:text-2xl font-light">&times;</span>
+                  </button>
+
+                  {/* Content Container */}
+                  <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10">
+                    {/* Image */}
+                    <motion.div 
+                      className="mb-4 sm:mb-6"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2, duration: 0.4 }}
+                    >
+                      <img
+                        src={selected.images[0]}
+                        alt={selected.title}
+                        className="w-full max-h-[40vh] sm:max-h-[50vh] lg:max-h-[65vh] object-contain rounded-lg sm:rounded-xl shadow-lg bg-gray-50"
+                        onError={(e) => {
+                          e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5YTNhZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
+                        }}
+                      />
+                    </motion.div>
+                    
+                    {/* Title and Description */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3, duration: 0.4 }}
+                    >
+                      <Dialog.Title className="text-2xl sm:text-3xl font-extrabold text-purple-800 mb-4">
+                        {selected.title}
+                      </Dialog.Title>
+                      <Dialog.Description className="text-gray-700 text-base sm:text-lg leading-relaxed whitespace-pre-wrap">
+                        {selected.description}
+                      </Dialog.Description>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </Dialog.Panel>
+            </div>
+          </Dialog>
         )}
       </AnimatePresence>
     </div>
