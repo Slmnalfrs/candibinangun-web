@@ -9,17 +9,17 @@ const programData = {
     {
       title: "Pembukaan KKN",
       images: ["/assets/images/pembukaan.jpeg"],
-      description: "Kegiatan pembukaan program KKN sebagai tanda dimulainya pengabdian masyarakat.",
+      description: "Kegiatan pembukaan KKN Universitas Yudharta Pasuruan di Balai Desa Candibinangun pada 14 Juli 2025. Mengangkat tema MEMBANGUN DESA WIRAUSAHA MELALUI INOVASI EKONOMI KREATIF, acara berlangsung khidmat dengan partisipasi mahasiswa, perangkat desa, dan pelaku UMKM lokal. Tampak momen simbolis pengukuhan mahasiswa KKN serta antusiasme peserta yang terekam dalam sesi dokumentasi.",
     },
     {
       title: "SOP",
       images: ["/assets/images/SOP.jpeg"],
-      description: "Sosialisasi Standar Operasional Prosedur untuk pelaku wirausaha lokal.",
+      description: "Dalam semangat melestarikan warisan kuliner lokal, mahasiswa KKN Kelompok 14 Universitas Yudharta Pasuruan mengikuti proses pembuatan tape tradisional bersama Pak Imron, pelaku usaha tape yang telah puluhan tahun berkarya di Dusun Krajan. Kegiatan ini menjadi ruang belajar yang sarat nilai—dari teknik pengolahan hingga makna ketekunan dalam menjaga cita rasa khas desa. Mahasiswa terlibat langsung dari awal hingga akhir proses, menjadikan pengalaman ini bukan hanya praktik, tapi juga bentuk penghormatan terhadap budaya lokal..",
     },
     {
       title: "Inovasi Kemasan",
       images: ["/assets/images/website.jpeg"],
-      description: "Pengembangan kemasan modern untuk produk tape agar lebih menarik dan aman dalam distribusi.",
+      description: "Tim KKN Kelompok 14 Universitas Yudharta Pasuruan menghadirkan inovasi kemasan produk tape sebagai upaya meningkatkan daya tarik dan nilai jual tape Candibinangun. Dengan desain label sederhana namun informatif, serta penggunaan kemasan mika yang higienis, produk tape tampil lebih profesional tanpa meninggalkan nuansa lokal. Inovasi ini diharapkan mampu membuka peluang pemasaran yang lebih luas bagi UMKM setempat.",
     },
   ],
   "Program Isidental": [
@@ -27,14 +27,14 @@ const programData = {
       title: "Pendidikan",
       children: [
         {
-          title: "SDN",
+          title: "SDN Candi Binangun II",
           images: ["/assets/images/pendidikan.jpeg"],
-          description: "Mengajar dan membantu proses belajar mengajar di Sekolah Dasar.",
+          description: "Sebagai bentuk kontribusi di bidang pendidikan, Tim KKN Kelompok 14 Universitas Yudharta Pasuruan melaksanakan program mengajar di SDN Candibinangun. Kegiatan ini meliputi pembelajaran interaktif, pendampingan belajar, hingga edukasi karakter dan lingkungan. Antusiasme siswa dan kedekatan emosional yang terjalin menjadi bukti keberhasilan program ini dalam membangun semangat belajar dan inspirasi bagi generasi muda desa.",
         },
         {
-          title: "Bimbel",
-          images: ["/assets/images/sosialisasi.jpeg"],
-          description: "Bimbingan belajar untuk anak-anak desa di luar jam sekolah.",
+          title: "Bimbel Berdampak",
+          images: ["/assets/images/bimbel.jpeg"],
+          description: "Tim KKN 14 Universitas Yudharta Pasuruan mengadakan bimbingan belajar (bimbel) gratis bagi anak-anak di sekitar posko pada malam hari pukul 19.00, yang dilaksanakan tiap beberapa hari dalam seminggu. Kegiatan ini berlangsung dengan suasana santai namun tetap edukatif, membantu siswa memahami pelajaran sekolah sekaligus menumbuhkan semangat belajar. Antusiasme dan keceriaan anak-anak menjadi motivasi tersendiri bagi mahasiswa untuk terus berbagi ilmu.",
         },
       ],
     },
@@ -44,12 +44,12 @@ const programData = {
         {
           title: "Madrasah",
           images: ["/assets/images/sosialisasi.jpeg"],
-          description: "Membantu kegiatan belajar di madrasah diniyah.",
+          description: "Madrasah Diniyah Al-Ikhlas merupakan lembaga pendidikan nonformal di Desa Candibinangun yang berfokus pada pengajaran ilmu agama Islam bagi anak-anak. Setiap sore, para santri belajar membaca Al-Qur'an, fiqih, akidah-akhlak, serta sejarah Islam dalam suasana yang khidmat namun menyenangkan. Dengan bimbingan ustadz-ustadzah yang berpengalaman, madrasah ini menjadi garda terdepan dalam membentuk generasi yang berilmu dan berakhlak mulia.",
         },
         {
           title: "TPQ",
           images: ["/assets/images/TPQ.jpeg"],
-          description: "Mengajar dan mendampingi anak-anak dalam kegiatan Taman Pendidikan Quran.",
+          description: "TPQ Al-Ikhlas menjadi pusat pembelajaran Al-Qur’an dan nilai-nilai keislaman bagi anak-anak di Desa Candibinangun. Dalam suasana yang hangat dan penuh semangat, para santri belajar mengaji, menghafal surah pendek, serta menanamkan akhlak mulia sejak dini. Kegiatan rutin ini didampingi oleh para ustadz dan ustadzah yang sabar dan berdedikasi tinggi.",
         },
       ],
     },
@@ -57,14 +57,30 @@ const programData = {
       title: "Sosial",
       children: [
         {
-          title: "Kerja Bakti",
-          images: ["/assets/images/sosialisasi.jpeg"],
-          description: "Membersihkan lingkungan dan fasilitas umum secara gotong royong.",
+          title: "Posyandu",
+          images: ["/assets/images/posyandu.jpeg"],
+          description: "Posyandu di Desa Candibinangun menjadi garda terdepan dalam pelayanan kesehatan dasar masyarakat, khususnya ibu hamil, balita, dan lansia. Kegiatan rutin seperti penimbangan, imunisasi, dan penyuluhan gizi dilaksanakan oleh kader desa dengan penuh dedikasi. Kehadiran mahasiswa KKN juga menambah semangat melalui dukungan edukatif dan dokumentasi kegiatan yang memperkuat peran Posyandu dalam membangun generasi sehat.",
         },
+        {
+          title: "Polindes",
+          images: ["/assets/images/polindes.jpeg"],
+          description: "Pondok Bersalin Desa (Polindes) Candibinangun hadir sebagai fasilitas kesehatan yang melayani kebutuhan ibu hamil, ibu menyusui, dan anak-anak secara cepat dan terjangkau. Didukung bidan desa dan kader kesehatan, Polindes menjadi tempat konsultasi dan pemeriksaan rutin yang penting bagi masyarakat. Kolaborasi dengan mahasiswa KKN turut memperkuat edukasi kesehatan dan sosialisasi pola hidup sehat di lingkungan desa.",
+        },
+        {
+          title: "Bersih-Bersih Gedung Olahraga",
+          images: ["/assets/images/kerja bakti.jpeg"],
+          description: "Mahasiswa KKN 14 Universitas Yudharta Pasuruan bersama Di Desa Candibinangun melaksanakan kegiatan bersih-bersih di gedung olahraga desa. Kegiatan ini bertujuan menciptakan lingkungan yang bersih, sehat, dan nyaman untuk mendukung aktivitas olahraga. Kolaborasi ini juga menjadi momen mempererat semangat gotong royong dan kepedulian terhadap fasilitas umum.",
+        },
+        {
+          title: "Kerja Bakti Bersama Warga ",
+          images: ["/assets/images/kerja bakti warga.jpeg"],
+          description: "Warga Desa Candibinangun bersama mahasiswa KKN Universitas Yudharta Pasuruan melaksanakan kerja bakti sebagai wujud kepedulian terhadap lingkungan. Kegiatan ini mencakup pembersihan jalan desa, fasilitas umum, dan tempat ibadah. Dengan semangat gotong royong, kebersamaan terjalin erat, sekaligus memperkuat nilai sosial dan kebersihan lingkungan sekitar.",
+        },
+        
       ],
     },
   ],
-  "Program Unggulan": [
+  /*"Program Unggulan": [
     {
       title: "Mitigasi Stunting",
       images: ["/assets/images/sosialisasi.jpeg"],
@@ -75,7 +91,7 @@ const programData = {
       images: ["/assets/images/sosialisasi.jpeg"],
       description: "Pembuatan video dan desain profil usaha tape yang siap untuk promosi.",
     },
-  ],
+  ],*/
 };
 
 export default function Kegiatan() {

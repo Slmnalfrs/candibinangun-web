@@ -4,21 +4,21 @@ import React from "react";
 const organisasi = [
   {
     title: "Fatayat NU",
-    image: "/assets/images/fatayat.jpg",
+    image: "/assets/images/fatayat.jpeg",
     description:
-      "Fatayat NU merupakan organisasi perempuan muda Nahdlatul Ulama yang aktif dalam kegiatan sosial, keagamaan, dan pemberdayaan masyarakat desa.",
+      "Fatayat NU Candibinangun menjadi motor penggerak dalam kegiatan sosial, keagamaan, dan pemberdayaan perempuan muda di desa. Melalui berbagai kegiatan seperti pengajian rutin, pelatihan keterampilan, serta kolaborasi dengan mahasiswa KKN, Fatayat NU turut memperkuat peran perempuan dalam pembangunan desa berbasis nilai keislaman dan kebersamaan.",
   },
   {
     title: "PKK",
-    image: "/assets/images/pkk.jpg",
+    image: "/assets/images/pkk.jpeg",
     description:
-      "PKK (Pemberdayaan dan Kesejahteraan Keluarga) adalah organisasi kemasyarakatan yang berfokus pada kesejahteraan keluarga dan pemberdayaan perempuan di desa.",
+      "Tim Penggerak PKK Desa Candibinangun aktif menjalankan berbagai program pemberdayaan keluarga, mulai dari posyandu, pelatihan keterampilan, hingga edukasi gizi dan kesehatan. Kolaborasi dengan mahasiswa KKN juga turut memperkuat peran ibu-ibu PKK dalam membangun keluarga yang mandiri, sehat, dan berdaya. Semangat gotong royong dan solidaritas menjadi kunci keberhasilan setiap kegiatan yang digelar.",
   },
   {
-    title: "BUMDes",
+    title: "BUMDES",
     image: "/assets/images/bumdes.jpg",
     description:
-      "BUMDes (Badan Usaha Milik Desa) adalah lembaga usaha desa yang dibentuk untuk mengelola potensi ekonomi lokal dan meningkatkan kesejahteraan masyarakat desa.",
+      "Badan Usaha Milik Desa (BUMDes) Candibinangun berperan penting dalam menggerakkan roda perekonomian lokal melalui pengelolaan unit usaha desa yang berbasis potensi wilayah. Mulai dari pengembangan produk lokal hingga penyediaan layanan kebutuhan masyarakat, BUMDes hadir sebagai bentuk kemandirian dan inovasi desa. Kolaborasi dengan KKN turut membuka peluang baru dalam promosi dan pengembangan usaha secara lebih modern.",
   },
 ];
 

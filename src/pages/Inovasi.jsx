@@ -3,18 +3,8 @@ import { motion } from "framer-motion";
 const inovasiList = [
   {
     nama: "Kemasan",
-    deskripsi: "Tape singkong manis hasil fermentasi tradisional dengan cita rasa authentic yang telah diwariskan turun temurun.",
+    deskripsi: "Tim KKN Kelompok 14 Universitas Yudharta Pasuruan menghadirkan inovasi kemasan produk tape sebagai upaya meningkatkan daya tarik dan nilai jual tape Candibinangun. Dengan desain label sederhana namun informatif, serta penggunaan kemasan mika yang higienis, produk tape tampil lebih profesional tanpa meninggalkan nuansa lokal. Inovasi ini diharapkan mampu membuka peluang pemasaran yang lebih luas bagi UMKM setempat.",
     img: "/assets/images/.jpg",
-  },
-  {
-    nama: "Kemasan",
-    deskripsi: "Kue bolu lembut berbahan dasar tape singkong dengan tekstur yang unik dan rasa manis alami yang khas.",
-    img: "/assets/images/.jpg",
-  },
-  {
-    nama: "Kemasan",
-    deskripsi: "Tape digoreng renyah dengan lapisan tepung yang crispy, memberikan sensasi berbeda pada tape tradisional.",
-    img: "/assets/images/.jpeg",
   },
 ];
 

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 // Note: Using placeholder images since we don't have access to the actual assets
 const desaImage = '/assets/images/candi.jpg';
-const tapeImage = '/assets/images/es-tape.jpg';
+const tapeImage = '/assets/images/tape.jpeg';
 
 export default function ProfilDesa() {
   return (

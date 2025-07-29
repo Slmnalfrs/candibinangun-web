@@ -112,8 +112,7 @@ export default function Beranda() {
                 Wirausaha Lokal
               </h2>
               <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed text-justify sm:text-left">
-                Produk tape dan olahan lainnya merupakan hasil kerja keras para pelaku UMKM lokal.
-                Inovasi, semangat, dan kearifan lokal mendorong mereka untuk terus berkembang dan memberikan kontribusi positif bagi perekonomian desa.
+                Mahasiswa KKN Universitas Yudharta Pasuruan menggali potensi ekonomi lokal melalui kunjungan ke pelaku UMKM tape di Dusun Krajan, Desa Candibinangun. Terlihat antusiasme peserta saat berdialog langsung dengan produsen tape tradisional dan inovatif, sembari mendokumentasikan proses produksi serta tantangan yang mereka hadapi di era digital. Dokumentasi ini menjadi bukti nyata dedikasi mahasiswa dalam memberdayakan potensi desa secara berkelanjutan.
               </p>
             </motion.div>
             <motion.div
