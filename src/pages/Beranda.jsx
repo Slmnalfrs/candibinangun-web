@@ -54,7 +54,7 @@ export default function Beranda() {
         style={{ backgroundImage: `url('/assets/images/KKN.jpeg')` }}
       >
         {/* Enhanced Mobile Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/96 via-emerald-900/85 to-slate-800/95 md:from-slate-900/95 md:via-emerald-900/80 md:to-slate-800/90"></div>
+        <div className="absolute inset-0 bg-black/30 z-0"></div>
         
         {/* Responsive Particles */}
         <div className="absolute inset-0 hidden sm:block">
@@ -71,10 +71,11 @@ export default function Beranda() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-6 sm:mb-8"
           >
-            <div className="inline-flex items-center px-3 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 backdrop-blur-xl border border-emerald-400/30 rounded-full mb-6 sm:mb-8">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full mr-2 sm:mr-3 animate-pulse"></div>
-              <span className="text-emerald-300 font-medium tracking-wide text-xs sm:text-sm">SELAMAT DATANG DI</span>
+            <div className="inline-flex items-center px-3 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-emerald-400/60 to-teal-400/60 backdrop-blur-xl border border-emerald-300/60 rounded-full mb-6 sm:mb-8">
+             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-300 rounded-full mr-2 sm:mr-3 animate-pulse"></div>
+              <span className="text-white font-semibold tracking-wide text-xs sm:text-sm">SELAMAT DATANG DI</span>
             </div>
+
           </motion.div>
           
           <motion.h1
@@ -84,10 +85,7 @@ export default function Beranda() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-none mb-4 sm:mb-6"
           >
             <span className="block bg-gradient-to-r from-white via-emerald-200 to-teal-200 bg-clip-text text-transparent">
-              DESA CANDI
-            </span>
-            <span className="block bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-200 bg-clip-text text-transparent mt-1 sm:mt-2">
-              BINANGUN
+              DESA CANDI BINANGUN
             </span>
           </motion.h1>
           
@@ -97,7 +95,7 @@ export default function Beranda() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mb-8 sm:mb-10 lg:mb-12"
           >
-            <div className="w-16 sm:w-20 lg:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-emerald-400 to-teal-400 mx-auto mb-4 sm:mb-6 lg:mb-8 rounded-full"></div>
+            <div className="h-0.5 sm:h-1 mb-4 sm:mb-6 lg:mb-8 invisible"></div>
             <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-200 font-light tracking-wide max-w-4xl mx-auto leading-relaxed px-2">
               Kampung Tape yang Kaya Akan <span className="text-emerald-300 font-medium">Tradisi</span> dan <span className="text-teal-300 font-medium">Budaya</span>
             </p>

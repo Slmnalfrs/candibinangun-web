@@ -48,7 +48,7 @@ export default function Navbar() {
                 <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
                   Desa Candibinangun
                 </h1>
-                <p className="text-xs text-slate-400 hidden sm:block">KKN Universitas Yudharta</p>
+                <p className="text-xs text-slate-400 hidden sm:block">KKN 14 Universitas Yudharta</p>
               </div>
             </motion.div>
           </div>
