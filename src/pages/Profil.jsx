@@ -23,66 +23,64 @@ export default function ProfilDesa() {
     <div className="font-sans scroll-smooth overflow-x-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white">
 
       {/* Hero Section - Premium Dark Theme */}
-      <section className="min-h-screen w-full flex items-center justify-center text-white relative overflow-hidden pt-20">
-        {/* Background with Enhanced Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-emerald-900/85 to-slate-800/90"></div>
-        
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-1 h-1 md:w-2 md:h-2 bg-emerald-400/30 rounded-full animate-pulse"></div>
-          <div className="absolute top-3/4 right-1/4 w-0.5 h-0.5 md:w-1 md:h-1 bg-white/40 rounded-full animate-ping"></div>
-          <div className="absolute top-1/2 right-1/3 w-1 h-1 md:w-1.5 md:h-1.5 bg-emerald-300/20 rounded-full animate-bounce"></div>
-        </div>
+      {/* Hero Section - Premium Dark Theme */}
+<section className="min-h-screen w-full flex items-center justify-center text-white relative overflow-hidden pt-20">
+  {/* Background with Enhanced Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-emerald-900/85 to-slate-800/90"></div>
+  
+  {/* Animated Background Elements */}
+  <div className="absolute inset-0">
+    <div className="absolute top-1/4 left-1/4 w-1 h-1 md:w-2 md:h-2 bg-emerald-400/30 rounded-full animate-pulse"></div>
+    <div className="absolute top-3/4 right-1/4 w-0.5 h-0.5 md:w-1 md:h-1 bg-white/40 rounded-full animate-ping"></div>
+    <div className="absolute top-1/2 right-1/3 w-1 h-1 md:w-1.5 md:h-1.5 bg-emerald-300/20 rounded-full animate-bounce"></div>
+  </div>
 
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-16 sm:py-20 w-full max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="mb-6 sm:mb-8"
-          >
-            <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 backdrop-blur-xl border border-emerald-400/30 rounded-full mb-6 sm:mb-8">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full mr-2 sm:mr-3 animate-pulse"></div>
-              <span className="text-emerald-300 font-medium tracking-wide text-xs sm:text-sm">PROFIL DESA</span>
-            </div>
-          </motion.div>
+  <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-16 sm:py-20 w-full max-w-7xl mx-auto">
+    {/* Hero Section */}
+    <motion.div 
+      className="text-center mb-16 sm:mb-20 lg:mb-24 -mt-32 sm:-mt-40 lg:-mt-48"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.div
+        className="inline-block mb-6"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+      >
+        <span className="px-6 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full text-emerald-300 text-sm font-medium border border-emerald-500/30">
+          <div className="inline w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></div>
+          PROFIL DESA
+        </span>
+      </motion.div>
+      
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+        <span className="text-white">DESA</span>
+        <br />
+        <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-slate-200 bg-clip-text text-transparent">
+          CANDI BINANGUN
+        </span>
+      </h1>
+      
+      <p className="text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+        Menjelajahi sejarah, potensi, dan budaya lokal — <span className="text-emerald-300 font-medium">Kampung Tape</span> yang kaya <span className="text-teal-300 font-medium">tradisi</span> dan semangat kolaboratif.
+      </p>
+    </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-none mb-6 sm:mb-8"
-          >
-            <span className="block bg-gradient-to-r from-white via-emerald-200 to-teal-200 bg-clip-text text-transparent">
-              CANDI BINANGUN
-            </span>
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mb-8 sm:mb-12"
-          >
-            <div className="w-16 sm:w-20 lg:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-emerald-400 to-teal-400 mx-auto mb-6 sm:mb-8 rounded-full"></div>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-200 font-light tracking-wide max-w-4xl mx-auto leading-relaxed px-2">
-              Menjelajahi sejarah, potensi, dan budaya lokal — <span className="text-emerald-300 font-medium">Kampung Tape</span> yang kaya <span className="text-teal-300 font-medium">tradisi</span> dan semangat kolaboratif.
-            </p>
-          </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <div className="flex flex-col items-center">
-              <span className="text-xs sm:text-sm text-slate-300 mb-2">Scroll untuk membaca</span>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+    {/* Scroll Indicator */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.2 }}
+      className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+    >
+      <div className="flex flex-col items-center">
+        <span className="text-xs sm:text-sm text-slate-300 mb-2">Scroll untuk membaca</span>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Tentang Desa Section - Modern Card Design */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-white text-slate-800 relative overflow-hidden">

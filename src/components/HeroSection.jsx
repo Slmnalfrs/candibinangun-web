@@ -4,7 +4,7 @@ export default function Beranda() {
       {/* Hero Section */}
       <section
         className="h-screen bg-cover bg-center relative flex items-center justify-center text-white"
-        style={{ backgroundImage: `url('/assets/images/KKN.jpwg')` }}
+        style={{ backgroundImage: `url('/assets/images/KKN.jpeg')` }}
       >
         <div className="absolute inset-0 bg-black/50 z-0"></div>
         <div className="relative z-10 px-6 text-center space-y-6">
