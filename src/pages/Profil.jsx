@@ -79,9 +79,6 @@ export default function ProfilDesa() {
           >
             <div className="flex flex-col items-center">
               <span className="text-xs sm:text-sm text-slate-300 mb-2">Scroll untuk membaca</span>
-              <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/30 rounded-full flex justify-center">
-                <div className="w-0.5 h-2 sm:w-1 sm:h-3 bg-white/60 rounded-full mt-1.5 sm:mt-2 animate-bounce"></div>
-              </div>
             </div>
           </motion.div>
         </div>
@@ -465,24 +462,6 @@ export default function ProfilDesa() {
                   title="Lokasi Desa Candibinangun"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
-              </div>
-              
-              {/* Map Info Overlay */}
-              <div className="absolute bottom-10 left-10 right-10">
-                <div className="bg-black/70 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-white font-bold text-lg">Desa Candi Binangun</div>
-                      <div className="text-emerald-300 text-sm">Kec. Sukorejo, Kab. Pasuruan</div>
-                    </div>
-                    <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </motion.div>

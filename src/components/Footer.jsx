@@ -15,7 +15,7 @@ export default function Footer() {
           Desa Candibinangun
         </h2>
         <p className="text-sm font-medium text-gray-600">
-          KKN UYP 2025 – Kampung Tape
+          KKN 14 UYP 2025 – Kampung Tape
         </p>
       </div>
     </motion.footer>
