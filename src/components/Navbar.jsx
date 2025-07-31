@@ -53,7 +53,7 @@ export default function Navbar() {
             </motion.div>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Fixed */}
           <nav className="hidden lg:flex items-center space-x-1">
             {navItems.map((item, index) => {
               const isActive = location.pathname === item.href;
@@ -65,10 +65,14 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="relative" // Pindahkan relative ke sini
                 >
-                  <Link to={item.href} className="group relative flex items-center px-4 py-2 rounded-xl transition-all duration-300">
+                  <Link 
+                    to={item.href} 
+                    className="group relative flex items-center px-4 py-2 rounded-xl transition-all duration-300"
+                  >
                     <div
-                      className={`flex items-center ${
+                      className={`flex items-center relative ${
                         isActive 
                           ? "bg-white/10 text-white shadow-lg backdrop-blur-sm" 
                           : "text-slate-300 hover:text-white hover:bg-white/5"
@@ -76,13 +80,15 @@ export default function Navbar() {
                     >
                       <Icon className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:scale-110" />
                       <span className="font-medium text-sm">{item.label}</span>
-                      <motion.div
-                        className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transition-all duration-300 ${
-                          isActive ? "w-8 opacity-100" : "w-0 opacity-0 group-hover:w-6 group-hover:opacity-100"
-                        }`}
-                        layoutId="activeIndicator"
-                      />
                     </div>
+                    
+                    {/* Garis bawah dipindahkan ke posisi yang benar */}
+                    <motion.div
+                      className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transition-all duration-300 ${
+                        isActive ? "w-8 opacity-100" : "w-0 opacity-0 group-hover:w-6 group-hover:opacity-100"
+                      }`}
+                      layoutId="activeIndicator"
+                    />
                   </Link>
                 </motion.div>
               );
@@ -143,7 +149,11 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                   >
-                    <Link to={item.href} onClick={() => setIsOpen(false)} className="group flex items-center w-full px-4 py-3 rounded-xl transition-all duration-300">
+                    <Link 
+                      to={item.href} 
+                      onClick={() => setIsOpen(false)} 
+                      className="group flex items-center w-full px-4 py-3 rounded-xl transition-all duration-300"
+                    >
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 transition-all duration-300 ${
                         isActive 
                           ? "bg-gradient-to-r from-emerald-500 to-teal-500 shadow-lg" 
