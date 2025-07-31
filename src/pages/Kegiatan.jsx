@@ -17,7 +17,7 @@ const programData = {
       title: "SOP",
       images: ["/assets/images/SOP.jpeg"],
       description: "Dalam semangat melestarikan warisan kuliner lokal, mahasiswa KKN Kelompok 14 Universitas Yudharta Pasuruan mengikuti proses pembuatan tape tradisional bersama Pak Imron, pelaku usaha tape yang telah puluhan tahun berkarya di Dusun Krajan. Kegiatan ini menjadi ruang belajar yang sarat nilai—dari teknik pengolahan hingga makna ketekunan dalam menjaga cita rasa khas desa. Mahasiswa terlibat langsung dari awal hingga akhir proses, menjadikan pengalaman ini bukan hanya praktik, tapi juga bentuk penghormatan terhadap budaya lokal.",
-      location: "Dusun Krajan",
+      location: "Pelaku Usaha Tape",
       participants: "Tim KKN 14"
     },
     {
@@ -52,6 +52,12 @@ const programData = {
       title: "Keagamaan",
       icon: "🕌",
       children: [
+        {
+          title: "Tahlilan",
+          images: ["/assets/images/tahlil.jpeg"],
+          description: "Setiap hari Kamis setelah salat Magrib, Di Basecamp Kelompok KKN 14 Universitas Yudharta Pasuruan menggelar tahlil rutin sebagai bagian dari kegiatan spiritual harian. Dalam suasana tenang dan sederhana, kegiatan ini menjadi ruang untuk menenangkan hati, memperkuat ikatan tim, serta memohon keberkahan selama menjalankan program pengabdian di desa. Doa-doa yang dilantunkan mencerminkan nilai kekompakan dan keikhlasan dalam melayani masyarakat.",
+          institution: "Basecamp",
+        },
         {
           title: "Madrasah",
           images: ["/assets/images/madrasah.jpeg"],
@@ -106,6 +112,13 @@ const programData = {
           description: "Warga Desa Candibinangun bersama mahasiswa KKN Universitas Yudharta Pasuruan melaksanakan kerja bakti sebagai wujud kepedulian terhadap lingkungan. Kegiatan ini mencakup pembersihan jalan desa, fasilitas umum, dan tempat ibadah. Dengan semangat gotong royong, kebersamaan terjalin erat, sekaligus memperkuat nilai sosial dan kebersihan lingkungan sekitar.",
           spirit: "Gotong Royong",
           scope: "Lingkungan Desa"
+        },
+        {
+          title: "Senam Pagi Bersama",
+          images: ["/assets/images/senam.jpeg"],
+          description: "Senam rutin yang digelar setiap hari Minggu oleh Tim KKN 14 Universitas Yudharta Pasuruan di Balai Dusun Krajan menjadi wujud nyata komitmen terhadap gaya hidup sehat selama masa pengabdian. Kegiatan ini tidak hanya bermanfaat untuk kebugaran, tetapi juga menciptakan atmosfer positif dan semangat baru di tengah aktivitas KKN. Gerakan energik dan suasana ceria menjadikan Minggu pagi lebih produktif dan bermakna.",
+          spirit: "Senam Bersama",
+          scope: "Balai Dusun"
         },
       ],
     },
@@ -172,9 +185,10 @@ export default function Kegiatan() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <span className="px-6 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full text-emerald-300 text-sm font-medium border border-emerald-500/30">
+              <span className="px-4 sm:px-6 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full text-emerald-300 text-sm font-medium border border-emerald-500/30 break-words whitespace-normal max-w-xs sm:max-w-md w-full block mx-auto">
                 KKN 14 UNIVERSITAS YUDHARTA PASURUAN
               </span>
+
             </motion.div>
             
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">

@@ -54,7 +54,7 @@ export default function Beranda() {
         style={{ backgroundImage: `url('/assets/images/KKN.jpeg')` }}
       >
         {/* Enhanced Mobile Gradient */}
-        <div className="absolute inset-0 bg-black/30 z-0"></div>
+        <div className="absolute inset-0 bg-black/50 z-0"></div>
         
         {/* Responsive Particles */}
         <div className="absolute inset-0 hidden sm:block">
@@ -201,7 +201,7 @@ export default function Beranda() {
                   className="bg-gradient-to-br from-slate-600 to-slate-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white text-center"
                 >
                   <div className="text-2xl sm:text-3xl font-black mb-1 sm:mb-2">1970</div>
-                  <div className="text-slate-300 font-medium text-xs sm:text-sm">Didirikan Pada Tahun</div>
+                  <div className="text-slate-300 font-medium text-xs sm:text-sm">Diresmikan Pada Tahun</div>
                 </motion.div>
               </div>
             </motion.div>
@@ -281,8 +281,7 @@ export default function Beranda() {
                     <div className="bg-black/60 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 border border-white/20">
                       <div className="flex items-center justify-between">
                         <div className="min-w-0 flex-1">
-                          <div className="text-white font-bold text-sm sm:text-base truncate">UMKM Tape</div>
-                          <div className="text-emerald-300 text-xs sm:text-sm">Produk Unggulan</div>
+                          <div className="text-white font-bold text-sm sm:text-base truncate">Pelaku UMKM Tape</div>
                         </div>
                         <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-emerald-500 rounded-full flex items-center justify-center ml-3 flex-shrink-0">
                           <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
