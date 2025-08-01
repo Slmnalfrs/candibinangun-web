@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 // Using provided image paths
-const desaImage = '/assets/images/candi.jpg';
+const desaImage = '/assets/images/candi.jpeg';
 const tapeImage = '/assets/images/tape.jpeg';
 
 export default function ProfilDesa() {

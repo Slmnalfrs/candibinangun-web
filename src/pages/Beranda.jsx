@@ -49,91 +49,118 @@ export default function Beranda() {
 
       {/* Hero Section - Ultra Responsive */}
       <section
-        id="hero"
-        className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center text-white relative overflow-hidden"
-        style={{ backgroundImage: `url('/assets/images/KKN.jpeg')` }}
-      >
-        {/* Enhanced Mobile Gradient */}
-        <div className="absolute inset-0 bg-black/50 z-0"></div>
-        
-        {/* Responsive Particles */}
-        <div className="absolute inset-0 hidden sm:block">
-          <div className="absolute top-1/4 left-1/4 w-1 h-1 md:w-2 md:h-2 bg-emerald-400/30 rounded-full animate-pulse"></div>
-          <div className="absolute top-3/4 right-1/4 w-0.5 h-0.5 md:w-1 md:h-1 bg-white/40 rounded-full animate-ping"></div>
-          <div className="absolute top-1/2 right-1/3 w-1 h-1 md:w-1.5 md:h-1.5 bg-emerald-300/20 rounded-full animate-bounce"></div>
-        </div>
-        
-        {/* Main Content - Mobile Optimized */}
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-16 sm:py-20 w-full max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-6 sm:mb-8"
-          >
-            <div className="inline-flex items-center px-3 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-emerald-400/60 to-teal-400/60 backdrop-blur-xl border border-emerald-300/60 rounded-full mb-6 sm:mb-8">
-             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-300 rounded-full mr-2 sm:mr-3 animate-pulse"></div>
-              <span className="text-white font-semibold tracking-wide text-xs sm:text-sm">SELAMAT DATANG DI</span>
-            </div>
+  id="hero"
+  className="min-h-screen w-full flex items-center justify-center text-white relative overflow-hidden"
+>
+  {/* Background Image with Mobile Optimization */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:bg-cover sm:bg-center md:bg-cover md:bg-center"
+    style={{ 
+      backgroundImage: `url('/assets/images/KKN.jpeg')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center',
+      backgroundAttachment: 'scroll'
+    }}
+  >
+    {/* Mobile-specific background adjustments */}
+    <style jsx>{`
+      @media (max-width: 640px) {
+        div {
+          background-size: cover !important;
+          background-position: center 30% !important;
+          background-attachment: scroll !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        div {
+          background-size: 120% auto !important;
+          background-position: center 25% !important;
+        }
+      }
+    `}</style>
+  </div>
 
-          </motion.div>
-          
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-none mb-4 sm:mb-6"
-          >
-            <span className="block bg-gradient-to-r from-white via-emerald-200 to-teal-200 bg-clip-text text-transparent">
-              DESA CANDI BINANGUN
-            </span>
-          </motion.h1>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mb-8 sm:mb-10 lg:mb-12"
-          >
-            <div className="h-0.5 sm:h-1 mb-4 sm:mb-6 lg:mb-8 invisible"></div>
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-200 font-light tracking-wide max-w-4xl mx-auto leading-relaxed px-2">
-              Kampung Tape yang Kaya Akan <span className="text-emerald-300 font-medium">Tradisi</span> dan <span className="text-teal-300 font-medium">Budaya</span>
-            </p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6"
-          >
-            <motion.a
-              href="/profil"
-              whileHover={{ scale: isMobile ? 1 : 1.05, y: isMobile ? 0 : -3 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-sm sm:text-base lg:text-lg rounded-xl sm:rounded-2xl shadow-2xl shadow-emerald-900/50 transition-all duration-300 overflow-hidden touch-manipulation"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative z-10">Jelajahi Desa</span>
-              <svg className="relative z-10 ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </motion.a>
-            
-            <motion.a
-              href="#profil"
-              whileHover={{ scale: isMobile ? 1 : 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/30 text-white font-semibold text-sm sm:text-base lg:text-lg rounded-xl sm:rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300 touch-manipulation"
-            >
-              <span>Pelajari Lebih Lanjut</span>
-              <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </motion.a>
-          </motion.div>
-        </div>
-      </section>
+  {/* Enhanced Mobile Gradient */}
+  <div className="absolute inset-0 bg-black/50 z-0"></div>
+  
+  {/* Responsive Particles */}
+  <div className="absolute inset-0 hidden sm:block">
+    <div className="absolute top-1/4 left-1/4 w-1 h-1 md:w-2 md:h-2 bg-emerald-400/30 rounded-full animate-pulse"></div>
+    <div className="absolute top-3/4 right-1/4 w-0.5 h-0.5 md:w-1 md:h-1 bg-white/40 rounded-full animate-ping"></div>
+    <div className="absolute top-1/2 right-1/3 w-1 h-1 md:w-1.5 md:h-1.5 bg-emerald-300/20 rounded-full animate-bounce"></div>
+  </div>
+  
+  {/* Main Content - Mobile Optimized */}
+  <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-16 sm:py-20 w-full max-w-7xl mx-auto text-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="mb-6 sm:mb-8"
+    >
+      <div className="inline-flex items-center px-3 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-emerald-400/60 to-teal-400/60 backdrop-blur-xl border border-emerald-300/60 rounded-full mb-6 sm:mb-8">
+       <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-300 rounded-full mr-2 sm:mr-3 animate-pulse"></div>
+        <span className="text-white font-semibold tracking-wide text-xs sm:text-sm">SELAMAT DATANG DI</span>
+      </div>
+    </motion.div>
+    
+    <motion.h1
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.2 }}
+      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-none mb-4 sm:mb-6"
+    >
+      <span className="block bg-gradient-to-r from-white via-emerald-200 to-teal-200 bg-clip-text text-transparent">
+        DESA CANDI BINANGUN
+      </span>
+    </motion.h1>
+    
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.6 }}
+      className="mb-8 sm:mb-10 lg:mb-12"
+    >
+      <div className="h-0.5 sm:h-1 mb-4 sm:mb-6 lg:mb-8 invisible"></div>
+      <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-200 font-light tracking-wide max-w-4xl mx-auto leading-relaxed px-2">
+        Kampung Tape yang Kaya Akan <span className="text-emerald-300 font-medium">Tradisi</span> dan <span className="text-teal-300 font-medium">Budaya</span>
+      </p>
+    </motion.div>
+    
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1, duration: 0.6 }}
+      className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6"
+    >
+      <motion.a
+        href="/profil"
+        whileHover={{ scale: isMobile ? 1 : 1.05, y: isMobile ? 0 : -3 }}
+        whileTap={{ scale: 0.95 }}
+        className="group relative inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-sm sm:text-base lg:text-lg rounded-xl sm:rounded-2xl shadow-2xl shadow-emerald-900/50 transition-all duration-300 overflow-hidden touch-manipulation"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <span className="relative z-10">Jelajahi Desa</span>
+        <svg className="relative z-10 ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </motion.a>
+      
+      <motion.a
+        href="#profil"
+        whileHover={{ scale: isMobile ? 1 : 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="group inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/30 text-white font-semibold text-sm sm:text-base lg:text-lg rounded-xl sm:rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300 touch-manipulation"
+      >
+        <span>Pelajari Lebih Lanjut</span>
+        <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </motion.a>
+    </motion.div>
+  </div>
+</section>
 
       {/* Profil Desa - Mobile-First Design */}
       <section id="profil" className="py-12 sm:py-16 lg:py-20 xl:py-32 bg-gradient-to-br from-slate-50 to-white text-slate-800 relative overflow-hidden">
