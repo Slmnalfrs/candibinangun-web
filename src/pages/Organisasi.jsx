@@ -9,7 +9,6 @@ const organisasi = [
     description: "Fatayat NU Candibinangun menjadi motor penggerak dalam kegiatan sosial, keagamaan, dan pemberdayaan perempuan muda di desa. Melalui berbagai kegiatan seperti pengajian rutin, pelatihan keterampilan, serta kolaborasi dengan mahasiswa KKN, Fatayat NU turut memperkuat peran perempuan dalam pembangunan desa berbasis nilai keislaman dan kebersamaan.",
     icon: Heart,
     fokus: "Pemberdayaan Perempuan",
-    anggota: "120+ Anggota",
     kegiatan: "Pengajian & Pelatihan",
     color: "emerald"
   },
@@ -19,7 +18,6 @@ const organisasi = [
     description: "Tim Penggerak PKK Desa Candibinangun aktif menjalankan berbagai program pemberdayaan keluarga, mulai dari posyandu, pelatihan keterampilan, hingga edukasi gizi dan kesehatan. Kolaborasi dengan mahasiswa KKN juga turut memperkuat peran ibu-ibu PKK dalam membangun keluarga yang mandiri, sehat, dan berdaya. Semangat gotong royong dan solidaritas menjadi kunci keberhasilan setiap kegiatan yang digelar.",
     icon: Users,
     fokus: "Pemberdayaan Keluarga",
-    anggota: "80+ Keluarga",
     kegiatan: "Posyandu & Edukasi",
     color: "teal"
   },
@@ -29,8 +27,16 @@ const organisasi = [
     description: "Badan Usaha Milik Desa (BUMDes) Candibinangun berperan penting dalam menggerakkan roda perekonomian lokal melalui pengelolaan unit usaha desa yang berbasis potensi wilayah. Mulai dari pengembangan produk lokal hingga penyediaan layanan kebutuhan masyarakat, BUMDes hadir sebagai bentuk kemandirian dan inovasi desa. Kolaborasi dengan KKN turut membuka peluang baru dalam promosi dan pengembangan usaha secara lebih modern.",
     icon: Building,
     fokus: "Ekonomi Desa",
-    anggota: "15+ Unit Usaha",
     kegiatan: "Pengembangan UMKM",
+    color: "slate"
+  },
+  {
+    title: "POLINDES",
+    image: "/assets/images/polindes.jpeg",
+    description: "Pondok Bersalin Desa (Polindes) Candibinangun hadir sebagai fasilitas kesehatan yang melayani kebutuhan ibu hamil, ibu menyusui, dan anak-anak secara cepat dan terjangkau. Didukung bidan desa dan kader kesehatan, Polindes menjadi tempat konsultasi dan pemeriksaan rutin yang penting bagi masyarakat. Kolaborasi dengan mahasiswa KKN turut memperkuat edukasi kesehatan dan sosialisasi pola hidup sehat di lingkungan desa",
+    icon: Building,
+    fokus: "Pondok Bersalin Desa",
+    kegiatan: "Kesehatan Ibu & Anak",
     color: "slate"
   },
 ];

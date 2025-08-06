@@ -14,7 +14,7 @@ const programData = {
       date: "14 Juli 2025",
     },
     {
-      title: "SOP",
+      title: "SOP (Standard Operating Procedure)",
       images: ["/assets/images/SOP.jpeg"],
       description: "Dalam semangat melestarikan warisan kuliner lokal, mahasiswa KKN Kelompok 14 Universitas Yudharta Pasuruan mengikuti proses pembuatan tape tradisional bersama Pak Imron, pelaku usaha tape yang telah puluhan tahun berkarya di Dusun Krajan. Kegiatan ini menjadi ruang belajar yang sarat nilai—dari teknik pengolahan hingga makna ketekunan dalam menjaga cita rasa khas desa. Mahasiswa terlibat langsung dari awal hingga akhir proses, menjadikan pengalaman ini bukan hanya praktik, tapi juga bentuk penghormatan terhadap budaya lokal.",
       location: "Pelaku Usaha Tape",
@@ -22,8 +22,8 @@ const programData = {
     },
     {
       title: "Inovasi Kemasan",
-      images: ["/assets/images/website.jpeg"],
-      description: "Tim KKN Kelompok 14 Universitas Yudharta Pasuruan menghadirkan inovasi kemasan produk tape sebagai upaya meningkatkan daya tarik dan nilai jual tape Candibinangun. Dengan desain label sederhana namun informatif, serta penggunaan kemasan mika yang higienis, produk tape tampil lebih profesional tanpa meninggalkan nuansa lokal. Inovasi ini diharapkan mampu membuka peluang pemasaran yang lebih luas bagi UMKM setempat.",
+      images: ["/assets/images/inovasi.jpeg"],
+      description: "Tim KKN Kelompok 14 Universitas Yudharta Pasuruan menghadirkan inovasi kemasan produk tape sebagai upaya meningkatkan daya tarik dan nilai jual tape Candibinangun. Dengan desain label sederhana namun informatif, serta penggunaan kemasan mika yang higienis, produk tape tampil lebih profesional tanpa meninggalkan nuansa lokal. tanpa meninggalkan ciri khas tradisionalnya. Inovasi ini diharapkan mampu membuka peluang pemasaran yang lebih luas bagi UMKM setempat.",
       impact: "Peningkatan Nilai Jual",
       participants: "UMKM Lokal"
     },
@@ -45,6 +45,18 @@ const programData = {
           images: ["/assets/images/bimbel.jpeg"],
           description: "Tim KKN 14 Universitas Yudharta Pasuruan mengadakan bimbingan belajar (bimbel) gratis bagi anak-anak di sekitar posko pada malam hari pukul 19.00, yang dilaksanakan tiap beberapa hari dalam seminggu. Kegiatan ini berlangsung dengan suasana santai namun tetap edukatif, membantu siswa memahami pelajaran sekolah sekaligus menumbuhkan semangat belajar. Antusiasme dan keceriaan anak-anak menjadi motivasi tersendiri bagi mahasiswa untuk terus berbagi ilmu.",
           time: "19.00 WIB",
+        },
+        {
+          title: "Penutupan Program Pendidikan",
+          images: ["/assets/images/penutupan pendidikan.jpeg"],
+          description: "Sebagai penutup rangkaian kegiatan insidental di bidang pendidikan, Tim KKN 14 Universitas Yudharta Pasuruan menggelar acara pelepasan di SDN Candibinangun II. Momen ini menjadi simbol berakhirnya kegiatan belajar bersama yang telah berjalan dengan penuh semangat dan kehangatan. Ucapan terima kasih dan kesan mendalam dari guru serta siswa menjadi bukti bahwa kehadiran mahasiswa telah memberi warna tersendiri dalam proses pembelajaran di sekolah.",
+          participants: "Seluruh Anggota KKN",
+        },
+         {
+          title: "Cindramata Pendidikan",
+          images: ["/assets/images/cindramata.jpeg"],
+          description: "Sebagai penutup rangkaian kegiatan insidental di bidang pendidikan, Tim KKN 14 Universitas Yudharta Pasuruan menggelar acara pelepasan di SDN Candibinangun II. Momen ini menjadi simbol berakhirnya kegiatan belajar bersama yang telah berjalan dengan penuh semangat dan kehangatan. Ucapan terima kasih dan kesan mendalam dari guru serta siswa menjadi bukti bahwa kehadiran mahasiswa telah memberi warna tersendiri dalam proses pembelajaran di sekolah.",
+          participants: "Seluruh Anggota KKN Dan Siswa SDN Candibinangun II",
         },
       ],
     },
@@ -79,6 +91,13 @@ const programData = {
           type: "Kegiatan Keagamaan",
           community: "Warga Desa"
         },
+        {
+          title: "Penutupan Program Keagamaan",
+          images: ["/assets/images/penutupan keagamaan.jpeg"],
+          description: "Kegiatan istighosah rutin yang diselenggarakan sebagai sarana spiritual dan kebersamaan umat. Acara ini menjadi momentum untuk memperkuat silaturahmi antarwarga sekaligus memohon keberkahan dan perlindungan Allah SWT untuk desa dan segenap penghuninya.",
+          type: "Pelepasan Keagamaan",
+          community: "KKN 14 Universitas Yudharta Pasuruan"
+        },
       ],
     },
     {
@@ -91,13 +110,6 @@ const programData = {
           description: "Posyandu di Desa Candibinangun menjadi garda terdepan dalam pelayanan kesehatan dasar masyarakat, khususnya ibu hamil, balita, dan lansia. Kegiatan rutin seperti penimbangan, imunisasi, dan penyuluhan gizi dilaksanakan oleh kader desa dengan penuh dedikasi. Kehadiran mahasiswa KKN juga menambah semangat melalui dukungan edukatif dan dokumentasi kegiatan yang memperkuat peran Posyandu dalam membangun generasi sehat.",
           service: "Pelayanan Kesehatan",
           target: "Ibu & Balita"
-        },
-        {
-          title: "Polindes",
-          images: ["/assets/images/polindes.jpeg"],
-          description: "Pondok Bersalin Desa (Polindes) Candibinangun hadir sebagai fasilitas kesehatan yang melayani kebutuhan ibu hamil, ibu menyusui, dan anak-anak secara cepat dan terjangkau. Didukung bidan desa dan kader kesehatan, Polindes menjadi tempat konsultasi dan pemeriksaan rutin yang penting bagi masyarakat. Kolaborasi dengan mahasiswa KKN turut memperkuat edukasi kesehatan dan sosialisasi pola hidup sehat di lingkungan desa.",
-          facility: "Pondok Bersalin Desa",
-          service: "Kesehatan Ibu & Anak"
         },
         {
           title: "Bersih-Bersih Gedung Olahraga",
@@ -119,6 +131,13 @@ const programData = {
           description: "Senam rutin yang digelar setiap hari Minggu oleh Tim KKN 14 Universitas Yudharta Pasuruan di Balai Dusun Krajan menjadi wujud nyata komitmen terhadap gaya hidup sehat selama masa pengabdian. Kegiatan ini tidak hanya bermanfaat untuk kebugaran, tetapi juga menciptakan atmosfer positif dan semangat baru di tengah aktivitas KKN. Gerakan energik dan suasana ceria menjadikan Minggu pagi lebih produktif dan bermakna.",
           spirit: "Senam Bersama",
           scope: "Balai Dusun"
+        },
+        {
+          title: "Senam Bersama Ibu-Ibu",
+          images: ["/assets/images/senam2.jpeg"],
+          description: "Senam bersama antara Tim KKN 14 Universitas Yudharta Pasuruan dan ibu-ibu Desa Candibinangun berlangsung di gedung olahraga yang terletak di sebelah Balai Desa. Kegiatan ini menjadi salah satu bentuk interaksi positif yang mendorong gaya hidup sehat sekaligus mempererat hubungan sosial antara mahasiswa dan warga. Dengan iringan musik yang enerjik dan suasana yang santai, senam pagi ini membawa keceriaan, kebugaran, dan semangat kebersamaan di tengah kesibukan program pengabdian",
+          spirit: "Senam Bersama",
+          scope: "Gedung Olahraga"
         },
       ],
     },

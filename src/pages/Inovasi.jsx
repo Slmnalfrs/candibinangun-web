@@ -5,7 +5,7 @@ const inovasiList = [
   {
     nama: "Kemasan Premium",
     deskripsi: "Tim KKN Kelompok 14 Universitas Yudharta Pasuruan menghadirkan inovasi kemasan produk tape sebagai upaya meningkatkan daya tarik dan nilai jual tape Candibinangun. Dengan desain label sederhana namun informatif, serta penggunaan kemasan mika yang higienis, produk tape tampil lebih profesional tanpa meninggalkan nuansa lokal. Inovasi ini diharapkan mampu membuka peluang pemasaran yang lebih luas bagi UMKM setempat.",
-    img: "/assets/images/kemasan.jpg",
+    img: "/assets/images/kemasan.jpeg",
     keunggulan: [
       "Desain Label Informatif",
       "Kemasan Yang Higienis", 
