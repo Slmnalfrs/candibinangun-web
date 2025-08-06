@@ -11,21 +11,20 @@ const programData = {
       title: "Pembukaan KKN",
       images: ["/assets/images/pembukaan.jpeg"],
       description: "Kegiatan pembukaan KKN Universitas Yudharta Pasuruan di Balai Desa Candibinangun pada 14 Juli 2025. Mengangkat tema MEMBANGUN DESA WIRAUSAHA MELALUI INOVASI EKONOMI KREATIF, acara berlangsung khidmat dengan partisipasi mahasiswa, perangkat desa, dan pelaku UMKM lokal. Tampak momen simbolis pengukuhan mahasiswa KKN serta antusiasme peserta yang terekam dalam sesi dokumentasi.",
-      date: "14 Juli 2025",
+      location: "Balai Desa Candibinangun",
     },
     {
       title: "SOP (Standard Operating Procedure)",
       images: ["/assets/images/SOP.jpeg"],
       description: "Dalam semangat melestarikan warisan kuliner lokal, mahasiswa KKN Kelompok 14 Universitas Yudharta Pasuruan mengikuti proses pembuatan tape tradisional bersama Pak Imron, pelaku usaha tape yang telah puluhan tahun berkarya di Dusun Krajan. Kegiatan ini menjadi ruang belajar yang sarat nilai—dari teknik pengolahan hingga makna ketekunan dalam menjaga cita rasa khas desa. Mahasiswa terlibat langsung dari awal hingga akhir proses, menjadikan pengalaman ini bukan hanya praktik, tapi juga bentuk penghormatan terhadap budaya lokal.",
-      location: "Pelaku Usaha Tape",
+      location: "Rumah Bapak Imron",
       participants: "Tim KKN 14"
     },
     {
-      title: "Inovasi Kemasan",
+      title: "Inovasi Kemasan & Uji Sampling",
       images: ["/assets/images/inovasi.jpeg"],
       description: "Tim KKN Kelompok 14 Universitas Yudharta Pasuruan menghadirkan inovasi kemasan produk tape sebagai upaya meningkatkan daya tarik dan nilai jual tape Candibinangun. Dengan desain label sederhana namun informatif, serta penggunaan kemasan mika yang higienis, produk tape tampil lebih profesional tanpa meninggalkan nuansa lokal. tanpa meninggalkan ciri khas tradisionalnya. Inovasi ini diharapkan mampu membuka peluang pemasaran yang lebih luas bagi UMKM setempat.",
-      impact: "Peningkatan Nilai Jual",
-      participants: "UMKM Lokal"
+      location: "Basecamp KKN",
     },
   ],
   "Program Isidental": [
@@ -38,13 +37,13 @@ const programData = {
           images: ["/assets/images/pendidikan.jpeg"],
           description: "Sebagai bentuk kontribusi di bidang pendidikan, Tim KKN Kelompok 14 Universitas Yudharta Pasuruan melaksanakan program mengajar di SDN Candibinangun. Kegiatan ini meliputi pembelajaran interaktif, pendampingan belajar, hingga edukasi karakter dan lingkungan. Antusiasme siswa dan kedekatan emosional yang terjalin menjadi bukti keberhasilan program ini dalam membangun semangat belajar dan inspirasi bagi generasi muda desa.",
           location: "SDN Candibinangun",
-          participants: "Siswa SD"
         },
         {
           title: "Bimbel Berdampak",
           images: ["/assets/images/bimbel.jpeg"],
           description: "Tim KKN 14 Universitas Yudharta Pasuruan mengadakan bimbingan belajar (bimbel) gratis bagi anak-anak di sekitar posko pada malam hari pukul 19.00, yang dilaksanakan tiap beberapa hari dalam seminggu. Kegiatan ini berlangsung dengan suasana santai namun tetap edukatif, membantu siswa memahami pelajaran sekolah sekaligus menumbuhkan semangat belajar. Antusiasme dan keceriaan anak-anak menjadi motivasi tersendiri bagi mahasiswa untuk terus berbagi ilmu.",
           time: "19.00 WIB",
+          location: "Basecamp KKN",
         },
         {
           title: "Penutupan Program Pendidikan",
@@ -56,7 +55,7 @@ const programData = {
           title: "Cindramata Pendidikan",
           images: ["/assets/images/cindramata.jpeg"],
           description: "Sebagai penutup rangkaian kegiatan insidental di bidang pendidikan, Tim KKN 14 Universitas Yudharta Pasuruan menggelar acara pelepasan di SDN Candibinangun II. Momen ini menjadi simbol berakhirnya kegiatan belajar bersama yang telah berjalan dengan penuh semangat dan kehangatan. Ucapan terima kasih dan kesan mendalam dari guru serta siswa menjadi bukti bahwa kehadiran mahasiswa telah memberi warna tersendiri dalam proses pembelajaran di sekolah.",
-          participants: "Seluruh Anggota KKN Dan Siswa SDN Candibinangun II",
+          participants: "Seluruh Anggota KKN",
         },
       ],
     },
@@ -68,7 +67,7 @@ const programData = {
           title: "Tahlilan",
           images: ["/assets/images/tahlil.jpeg"],
           description: "Setiap hari Kamis setelah salat Magrib, Di Basecamp Kelompok KKN 14 Universitas Yudharta Pasuruan menggelar tahlil rutin sebagai bagian dari kegiatan spiritual harian. Dalam suasana tenang dan sederhana, kegiatan ini menjadi ruang untuk menenangkan hati, memperkuat ikatan tim, serta memohon keberkahan selama menjalankan program pengabdian di desa. Doa-doa yang dilantunkan mencerminkan nilai kekompakan dan keikhlasan dalam melayani masyarakat.",
-          institution: "Basecamp",
+          institution: "Basecamp KKN",
         },
         {
           title: "Madrasah",
@@ -139,9 +138,27 @@ const programData = {
           spirit: "Senam Bersama",
           scope: "Gedung Olahraga"
         },
+        {
+          title: "Green Movement",
+          images: ["/assets/images/.jpeg"],
+          description: "Green Movement di Desa Candibinangun merupakan inisiatif mahasiswa KKN 14 Universitas Yudharta Pasuruan untuk meningkatkan kesadaran lingkungan. Kegiatan ini meliputi penanaman pohon, pembersihan area publik, dan edukasi tentang pentingnya menjaga kelestarian alam. Dengan semangat kolaboratif, warga desa turut berpartisipasi, menjadikan gerakan ini sebagai langkah nyata menuju desa yang lebih hijau dan berkelanjutan.",
+          scope: "Balai Dusun & Balai Desa"
+        }
       ],
     },
   ],
+  /*"Program Unggulan": [
+    {
+      title: "Mitigasi Stunting",
+      images: ["/assets/images/sosialisasi.jpeg"],
+      description: "Penyuluhan dan pembagian makanan sehat untuk pencegahan stunting.",
+    },
+    {
+      title: "Company Profile",
+      images: ["/assets/images/sosialisasi.jpeg"],
+      description: "Pembuatan video dan desain profil usaha tape yang siap untuk promosi.",
+    },
+  ],*/
 };
 
 export default function Kegiatan() {
@@ -358,14 +375,7 @@ export default function Kegiatan() {
                             e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk0YTNiOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
                           }}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        
-                        {/* Featured Badge */}
-                        <div className="absolute top-4 left-4">
-                          <span className="px-3 py-1 bg-emerald-500/90 backdrop-blur-sm rounded-full text-white text-xs font-medium">
-                            Program Utama
-                          </span>
-                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />                     
                       </div>
 
                       {/* Content */}

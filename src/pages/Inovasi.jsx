@@ -4,13 +4,14 @@ import { Package, TrendingUp, Users, Award, CheckCircle, Lightbulb,} from "lucid
 const inovasiList = [
   {
     nama: "Kemasan Premium",
-    deskripsi: "Tim KKN Kelompok 14 Universitas Yudharta Pasuruan menghadirkan inovasi kemasan produk tape sebagai upaya meningkatkan daya tarik dan nilai jual tape Candibinangun. Dengan desain label sederhana namun informatif, serta penggunaan kemasan mika yang higienis, produk tape tampil lebih profesional tanpa meninggalkan nuansa lokal. Inovasi ini diharapkan mampu membuka peluang pemasaran yang lebih luas bagi UMKM setempat.",
+    deskripsi: "Tim KKN Kelompok 14 Universitas Yudharta Pasuruan menghadirkan inovasi kemasan produk tape sebagai upaya meningkatkan daya tarik dan nilai jual tape di Candibinangun.",
     img: "/assets/images/kemasan.jpeg",
     keunggulan: [
-      "Desain Label Informatif",
+      "Praktis",
       "Kemasan Yang Higienis", 
-      "Nuansa Lokal Tetap Terjaga",
-      "Tampilan Profesional"
+      "Protek Yang Lebih Kuat",
+      "Tampilan Modern dan Tradisional",
+      "Desain Label Elegan"      
     ],
   },
 ];
@@ -67,7 +68,7 @@ export default function Inovasi() {
             >
               <span className="px-6 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full text-emerald-300 text-sm font-medium border border-emerald-500/30">
                 <Lightbulb className="inline w-4 h-4 mr-2" />
-                INOVASI PRODUK
+                INOVASI
               </span>
             </motion.div>
             
@@ -75,7 +76,7 @@ export default function Inovasi() {
               <span className="text-white">INOVASI</span>
               <br />
               <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-slate-200 bg-clip-text text-transparent">
-                KEMASAN PREMIUM
+                KEMASAN & UJI SAMPLING
               </span>
             </h1>
             

@@ -180,7 +180,7 @@ export default function Beranda() {
             className="text-center mb-10 sm:mb-12 lg:mb-16"
           >
             <div className="inline-block px-4 sm:px-6 py-2 bg-emerald-100 text-emerald-700 rounded-full font-medium text-sm sm:text-base mb-4 sm:mb-6">
-              Tentang Kami
+              Tentang Desa
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black bg-gradient-to-r from-slate-800 to-emerald-700 bg-clip-text text-transparent mb-4 sm:mb-6 px-2">
               Sejarah Singkat

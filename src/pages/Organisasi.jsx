@@ -7,7 +7,6 @@ const organisasi = [
     title: "Fatayat NU",
     image: "/assets/images/fatayat.jpeg",
     description: "Fatayat NU Candibinangun menjadi motor penggerak dalam kegiatan sosial, keagamaan, dan pemberdayaan perempuan muda di desa. Melalui berbagai kegiatan seperti pengajian rutin, pelatihan keterampilan, serta kolaborasi dengan mahasiswa KKN, Fatayat NU turut memperkuat peran perempuan dalam pembangunan desa berbasis nilai keislaman dan kebersamaan.",
-    icon: Heart,
     fokus: "Pemberdayaan Perempuan",
     kegiatan: "Pengajian & Pelatihan",
     color: "emerald"
@@ -16,7 +15,6 @@ const organisasi = [
     title: "PKK",
     image: "/assets/images/pkk.jpeg",
     description: "Tim Penggerak PKK Desa Candibinangun aktif menjalankan berbagai program pemberdayaan keluarga, mulai dari posyandu, pelatihan keterampilan, hingga edukasi gizi dan kesehatan. Kolaborasi dengan mahasiswa KKN juga turut memperkuat peran ibu-ibu PKK dalam membangun keluarga yang mandiri, sehat, dan berdaya. Semangat gotong royong dan solidaritas menjadi kunci keberhasilan setiap kegiatan yang digelar.",
-    icon: Users,
     fokus: "Pemberdayaan Keluarga",
     kegiatan: "Posyandu & Edukasi",
     color: "teal"
@@ -25,7 +23,6 @@ const organisasi = [
     title: "BUMDES",
     image: "/assets/images/bumdes.jpg",
     description: "Badan Usaha Milik Desa (BUMDes) Candibinangun berperan penting dalam menggerakkan roda perekonomian lokal melalui pengelolaan unit usaha desa yang berbasis potensi wilayah. Mulai dari pengembangan produk lokal hingga penyediaan layanan kebutuhan masyarakat, BUMDes hadir sebagai bentuk kemandirian dan inovasi desa. Kolaborasi dengan KKN turut membuka peluang baru dalam promosi dan pengembangan usaha secara lebih modern.",
-    icon: Building,
     fokus: "Ekonomi Desa",
     kegiatan: "Pengembangan UMKM",
     color: "slate"
@@ -34,14 +31,13 @@ const organisasi = [
     title: "POLINDES",
     image: "/assets/images/polindes.jpeg",
     description: "Pondok Bersalin Desa (Polindes) Candibinangun hadir sebagai fasilitas kesehatan yang melayani kebutuhan ibu hamil, ibu menyusui, dan anak-anak secara cepat dan terjangkau. Didukung bidan desa dan kader kesehatan, Polindes menjadi tempat konsultasi dan pemeriksaan rutin yang penting bagi masyarakat. Kolaborasi dengan mahasiswa KKN turut memperkuat edukasi kesehatan dan sosialisasi pola hidup sehat di lingkungan desa",
-    icon: Building,
     fokus: "Pondok Bersalin Desa",
     kegiatan: "Kesehatan Ibu & Anak",
     color: "slate"
   },
 ];
 
-const OrganisasiCard = React.memo(({ title, image, description, icon: Icon, color, index }) => {
+const OrganisasiCard = React.memo(({ title, image, description, color, index }) => {
   const colorClasses = {
     emerald: {
       gradient: "from-emerald-500 to-teal-500",
@@ -101,15 +97,7 @@ const OrganisasiCard = React.memo(({ title, image, description, icon: Icon, colo
         {/* Organization Badge */}
         <div className="absolute top-4 left-4">
           <div className={`flex items-center px-3 py-1 ${colors.bg} backdrop-blur-sm rounded-full border ${colors.border}`}>
-            <Icon className={`w-3 h-3 ${colors.text} mr-1`} />
             <span className="text-white text-xs font-medium">Organisasi</span>
-          </div>
-        </div>
-
-        {/* Icon Overlay */}
-        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className={`w-12 h-12 bg-gradient-to-r ${colors.gradient} rounded-full flex items-center justify-center shadow-lg`}>
-            <Icon className="w-6 h-6 text-white" />
           </div>
         </div>
       </div>
