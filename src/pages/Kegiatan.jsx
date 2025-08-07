@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar, Users, MapPin, Award } from "lucide-react";
+import { desc } from "framer-motion/client";
 
 // Updated data structure with nested sub-programs
 const programData = {
@@ -14,7 +15,7 @@ const programData = {
       location: "Balai Desa Candibinangun",
     },
     {
-      title: "SOP (Standard Operating Procedure)",
+      title: "SOP (Standar Operasional Prosedur)",
       images: ["/assets/images/SOP.jpeg"],
       description: "Dalam semangat melestarikan warisan kuliner lokal, mahasiswa KKN Kelompok 14 Universitas Yudharta Pasuruan mengikuti proses pembuatan tape tradisional bersama Pak Imron, pelaku usaha tape yang telah puluhan tahun berkarya di Dusun Krajan. Kegiatan ini menjadi ruang belajar yang sarat nilai—dari teknik pengolahan hingga makna ketekunan dalam menjaga cita rasa khas desa. Mahasiswa terlibat langsung dari awal hingga akhir proses, menjadikan pengalaman ini bukan hanya praktik, tapi juga bentuk penghormatan terhadap budaya lokal.",
       location: "Rumah Bapak Imron",
@@ -36,7 +37,7 @@ const programData = {
           title: "SDN Candi Binangun II",
           images: ["/assets/images/pendidikan.jpeg"],
           description: "Sebagai bentuk kontribusi di bidang pendidikan, Tim KKN Kelompok 14 Universitas Yudharta Pasuruan melaksanakan program mengajar di SDN Candibinangun. Kegiatan ini meliputi pembelajaran interaktif, pendampingan belajar, hingga edukasi karakter dan lingkungan. Antusiasme siswa dan kedekatan emosional yang terjalin menjadi bukti keberhasilan program ini dalam membangun semangat belajar dan inspirasi bagi generasi muda desa.",
-          location: "SDN Candibinangun",
+          location: "SDN Candibinangun II",
         },
         {
           title: "Bimbel Berdampak",
@@ -49,12 +50,14 @@ const programData = {
           title: "Penutupan Program Pendidikan",
           images: ["/assets/images/penutupan pendidikan.jpeg"],
           description: "Sebagai penutup rangkaian kegiatan insidental di bidang pendidikan, Tim KKN 14 Universitas Yudharta Pasuruan menggelar acara pelepasan di SDN Candibinangun II. Momen ini menjadi simbol berakhirnya kegiatan belajar bersama yang telah berjalan dengan penuh semangat dan kehangatan. Ucapan terima kasih dan kesan mendalam dari guru serta siswa menjadi bukti bahwa kehadiran mahasiswa telah memberi warna tersendiri dalam proses pembelajaran di sekolah.",
+          location: "SDN Candi Binangun II",
           participants: "Seluruh Anggota KKN",
         },
          {
           title: "Cindramata Pendidikan",
           images: ["/assets/images/cindramata.jpeg"],
           description: "Sebagai penutup rangkaian kegiatan insidental di bidang pendidikan, Tim KKN 14 Universitas Yudharta Pasuruan menggelar acara pelepasan di SDN Candibinangun II. Momen ini menjadi simbol berakhirnya kegiatan belajar bersama yang telah berjalan dengan penuh semangat dan kehangatan. Ucapan terima kasih dan kesan mendalam dari guru serta siswa menjadi bukti bahwa kehadiran mahasiswa telah memberi warna tersendiri dalam proses pembelajaran di sekolah.",
+          location: "SDN Candi Binangun II",
           participants: "Seluruh Anggota KKN",
         },
       ],
@@ -72,16 +75,14 @@ const programData = {
         {
           title: "Madrasah",
           images: ["/assets/images/madrasah.jpeg"],
-          description: "Madrasah Diniyah Al-Ikhlas merupakan lembaga pendidikan nonformal di Desa Candibinangun yang berfokus pada pengajaran ilmu agama Islam bagi anak-anak. Setiap sore, para santri belajar membaca Al-Qur'an, fiqih, akidah-akhlak, serta sejarah Islam dalam suasana yang khidmat namun menyenangkan. Dengan bimbingan ustadz-ustadzah yang berpengalaman, madrasah ini menjadi garda terdepan dalam membentuk generasi yang berilmu dan berakhlak mulia.",
-          institution: "Madrasah Diniyah Al-Ikhlas",
-          focus: "Pendidikan Agama Islam"
+          description: "Madrasah Al-Ikhlas merupakan lembaga pendidikan nonformal di Desa Candibinangun yang berfokus pada pengajaran ilmu agama Islam bagi anak-anak. Setiap sore, para santri belajar membaca Al-Qur'an, fiqih, akidah-akhlak, serta sejarah Islam dalam suasana yang khidmat namun menyenangkan. Dengan bimbingan ustadz-ustadzah yang berpengalaman, madrasah ini menjadi garda terdepan dalam membentuk generasi yang berilmu dan berakhlak mulia.",
+          institution: "Madrasah Al-Ikhlas",
         },
         {
-          title: "TPQ Al-Ikhlas",
+          title: "TPQ",
           images: ["/assets/images/TPQ.jpeg"],
           description: "TPQ Al-Ikhlas menjadi pusat pembelajaran Al-Qur'an dan nilai-nilai keislaman bagi anak-anak di Desa Candibinangun. Dalam suasana yang hangat dan penuh semangat, para santri belajar mengaji, menghafal surah pendek, serta menanamkan akhlak mulia sejak dini. Kegiatan rutin ini didampingi oleh para ustadz dan ustadzah yang sabar dan berdedikasi tinggi.",
           institution: "TPQ Al-Ikhlas",
-          activity: "Pembelajaran Al-Qur'an"
         },
         {
           title: "Istighosah",
@@ -95,7 +96,7 @@ const programData = {
           images: ["/assets/images/penutupan keagamaan.jpeg"],
           description: "Kegiatan istighosah rutin yang diselenggarakan sebagai sarana spiritual dan kebersamaan umat. Acara ini menjadi momentum untuk memperkuat silaturahmi antarwarga sekaligus memohon keberkahan dan perlindungan Allah SWT untuk desa dan segenap penghuninya.",
           type: "Pelepasan Keagamaan",
-          community: "KKN 14 Universitas Yudharta Pasuruan"
+          location: "TPQ & Madrasah Al-Ikhlas",
         },
       ],
     },
@@ -122,33 +123,46 @@ const programData = {
           images: ["/assets/images/kerja bakti warga.jpeg"],
           description: "Warga Desa Candibinangun bersama mahasiswa KKN Universitas Yudharta Pasuruan melaksanakan kerja bakti sebagai wujud kepedulian terhadap lingkungan. Kegiatan ini mencakup pembersihan jalan desa, fasilitas umum, dan tempat ibadah. Dengan semangat gotong royong, kebersamaan terjalin erat, sekaligus memperkuat nilai sosial dan kebersihan lingkungan sekitar.",
           spirit: "Gotong Royong",
-          scope: "Lingkungan Desa"
+          location: "Lingkungan Desa"
         },
         {
           title: "Senam Pagi Bersama",
           images: ["/assets/images/senam.jpeg"],
           description: "Senam rutin yang digelar setiap hari Minggu oleh Tim KKN 14 Universitas Yudharta Pasuruan di Balai Dusun Krajan menjadi wujud nyata komitmen terhadap gaya hidup sehat selama masa pengabdian. Kegiatan ini tidak hanya bermanfaat untuk kebugaran, tetapi juga menciptakan atmosfer positif dan semangat baru di tengah aktivitas KKN. Gerakan energik dan suasana ceria menjadikan Minggu pagi lebih produktif dan bermakna.",
           spirit: "Senam Bersama",
-          scope: "Balai Dusun"
+          location: "Balai Dusun"
         },
         {
           title: "Senam Bersama Ibu-Ibu",
           images: ["/assets/images/senam2.jpeg"],
           description: "Senam bersama antara Tim KKN 14 Universitas Yudharta Pasuruan dan ibu-ibu Desa Candibinangun berlangsung di gedung olahraga yang terletak di sebelah Balai Desa. Kegiatan ini menjadi salah satu bentuk interaksi positif yang mendorong gaya hidup sehat sekaligus mempererat hubungan sosial antara mahasiswa dan warga. Dengan iringan musik yang enerjik dan suasana yang santai, senam pagi ini membawa keceriaan, kebugaran, dan semangat kebersamaan di tengah kesibukan program pengabdian",
           spirit: "Senam Bersama",
-          scope: "Gedung Olahraga"
+          location: "Gedung Olahraga"
         },
         {
           title: "Green Movement",
-          images: ["/assets/images/.jpeg"],
-          description: "Green Movement di Desa Candibinangun merupakan inisiatif mahasiswa KKN 14 Universitas Yudharta Pasuruan untuk meningkatkan kesadaran lingkungan. Kegiatan ini meliputi penanaman pohon, pembersihan area publik, dan edukasi tentang pentingnya menjaga kelestarian alam. Dengan semangat kolaboratif, warga desa turut berpartisipasi, menjadikan gerakan ini sebagai langkah nyata menuju desa yang lebih hijau dan berkelanjutan.",
-          scope: "Balai Dusun & Balai Desa"
+          images: ["/assets/images/green movement.jpeg"],
+          description: "Program Green Movement yang digagas oleh tim KKN 14 diwujudkan lewat aksi nyata berupa penanaman pohon pucuk merah di area Balai Dusun dan Balai Desa. Kegiatan ini bukan hanya sekadar mempercantik lingkungan, tapi juga sebagai langkah awal untuk mengajak masyarakat lebih peduli terhadap penghijauan. Dengan menanam pohon bersama, diharapkan tumbuh kesadaran akan pentingnya menjaga alam dan menciptakan ruang hijau yang asri serta nyaman bagi semua.",
+          location: "Balai Dusun & Balai Desa",
+          participants: "Seluruh Anggota KKN",
+        },
+        {
+          title: "Cindramata Sosial",
+          images: ["/assets/images/cindramata sosial.jpeg"],
+          description: "Sebagai bentuk apresiasi sekaligus dukungan terhadap pelaku usaha lokal, tim KKN 14 memberikan cinderamata berupa pohon pucuk merah kepada pengusaha tape di Desa Candibinangun. Selain sebagai simbol penghargaan, pemberian ini juga menjadi bagian dari semangat Green Movement yang ingin mendorong masyarakat untuk ikut menjaga kelestarian lingkungan melalui langkah sederhana seperti menanam pohon di sekitar tempat tinggal atau usahanya",
+          location: "Balai Dusun & Balai Desa",
+          participants: "Seluruh Anggota KKN",
         }
       ],
     },
   ],
-  /*"Program Unggulan": [
+  "Program Unggulan": [
     {
+      title: "MoU",
+      images: ["/assets/images/mou.jpeg"],
+      description: "Sebagai bagian dari program pemberdayaan UMKM, tim KKN 14 melakukan penyerahan MoU inovasi kemasan kepada pelaku usaha tape di Desa Candibinangun. Kegiatan ini menjadi langkah awal dalam mendukung peningkatan kualitas produk lokal melalui desain kemasan yang lebih menarik dan sesuai dengan kebutuhan pasar. Penandatanganan MoU ini juga menandai komitmen bersama antara mahasiswa dan pelaku usaha untuk terus berinovasi serta mengembangkan potensi ekonomi desa secara berkelanjutan.",
+    },
+    /*{
       title: "Mitigasi Stunting",
       images: ["/assets/images/sosialisasi.jpeg"],
       description: "Penyuluhan dan pembagian makanan sehat untuk pencegahan stunting.",
@@ -157,8 +171,8 @@ const programData = {
       title: "Company Profile",
       images: ["/assets/images/sosialisasi.jpeg"],
       description: "Pembuatan video dan desain profil usaha tape yang siap untuk promosi.",
-    },
-  ],*/
+    },*/
+  ],
 };
 
 export default function Kegiatan() {
@@ -236,7 +250,7 @@ export default function Kegiatan() {
             </h1>
             
             <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Dokumentasi lengkap program kerja dan kegiatan KKN dalam membangun desa wirausaha melalui inovasi ekonomi kreatif
+              Dokumentasi program kerja dan kegiatan KKN dalam membangun desa wirausaha melalui ekonomi kreatif
             </p>
           </motion.div>
 

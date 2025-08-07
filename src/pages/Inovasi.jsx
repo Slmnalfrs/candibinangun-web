@@ -3,7 +3,7 @@ import { Package, TrendingUp, Users, Award, CheckCircle, Lightbulb,} from "lucid
 
 const inovasiList = [
   {
-    nama: "Kemasan Premium",
+    nama: "Inovasi Kemasan",
     deskripsi: "Tim KKN Kelompok 14 Universitas Yudharta Pasuruan menghadirkan inovasi kemasan produk tape sebagai upaya meningkatkan daya tarik dan nilai jual tape di Candibinangun.",
     img: "/assets/images/kemasan.jpeg",
     keunggulan: [

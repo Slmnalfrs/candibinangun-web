@@ -21,8 +21,8 @@ const organisasi = [
   },
   {
     title: "BUMDES",
-    image: "/assets/images/bumdes.jpg",
-    description: "Badan Usaha Milik Desa (BUMDes) Candibinangun berperan penting dalam menggerakkan roda perekonomian lokal melalui pengelolaan unit usaha desa yang berbasis potensi wilayah. Mulai dari pengembangan produk lokal hingga penyediaan layanan kebutuhan masyarakat, BUMDes hadir sebagai bentuk kemandirian dan inovasi desa. Kolaborasi dengan KKN turut membuka peluang baru dalam promosi dan pengembangan usaha secara lebih modern.",
+    image: "/assets/images/bumdes.jpeg",
+    description: "Badan Usaha Milik Desa (BUMDES) Candibinangun berperan penting dalam menggerakkan roda perekonomian lokal melalui pengelolaan unit usaha desa yang berbasis potensi wilayah. Mulai dari pengembangan produk lokal hingga penyediaan layanan kebutuhan masyarakat, BUMDes hadir sebagai bentuk kemandirian dan inovasi desa. Kolaborasi dengan KKN turut membuka peluang baru dalam promosi dan pengembangan usaha secara lebih modern.",
     fokus: "Ekonomi Desa",
     kegiatan: "Pengembangan UMKM",
     color: "slate"
@@ -93,13 +93,6 @@ const OrganisasiCard = React.memo(({ title, image, description, color, index }) 
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
-        {/* Organization Badge */}
-        <div className="absolute top-4 left-4">
-          <div className={`flex items-center px-3 py-1 ${colors.bg} backdrop-blur-sm rounded-full border ${colors.border}`}>
-            <span className="text-white text-xs font-medium">Organisasi</span>
-          </div>
-        </div>
       </div>
 
       {/* Content */}
