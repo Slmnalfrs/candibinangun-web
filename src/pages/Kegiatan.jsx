@@ -1,8 +1,7 @@
-
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, Users, MapPin, Award } from "lucide-react";
+import { X, Calendar, Users, MapPin, Award, Play, Pause } from "lucide-react";
 import { desc } from "framer-motion/client";
 
 // Updated data structure with nested sub-programs
@@ -26,6 +25,12 @@ const programData = {
       images: ["/assets/images/inovasi.jpeg"],
       description: "Tim KKN Kelompok 14 Universitas Yudharta Pasuruan menghadirkan inovasi kemasan produk tape sebagai upaya meningkatkan daya tarik dan nilai jual tape Candibinangun. Dengan desain label sederhana namun informatif, serta penggunaan kemasan mika yang higienis, produk tape tampil lebih profesional tanpa meninggalkan nuansa lokal. tanpa meninggalkan ciri khas tradisionalnya. Inovasi ini diharapkan mampu membuka peluang pemasaran yang lebih luas bagi UMKM setempat.",
       location: "Basecamp KKN",
+    },
+    {
+      title: "Pelepasan dan Penutupan  KKN",
+      images: ["/assets/images/pelepasan.jpeg"],
+      description: "Pelepasan KKN Kelompok 14 Universitas Yudharta Pasuruan di Balai Desa Candibinangun pada 7 Agustus 2025. Acara ini menandai berakhirnya program kerja yang telah dilaksanakan selama sebulan penuh. Team KKN 14 menggelar lomba face art dan lomba pidato sebagai acara pra pelepasan KKN yang dilaksanakan pada hari Rabu, 06 Agustus 2025, hal ini direalisasikan sebagai bentuk partisipasi dan kontribusi masyarakat dalam memeriahkan pelepasan KKN 14 desa Candibinangun. Momen ini dihadiri oleh perangkat desa, warga, dan mahasiswa KKN, Ucapan terima kasih dari perangkat desa dan warga menjadi penutup yang hangat bagi rangkaian kegiatan KKN.",
+      location: "Balai Desa Candibinangun",
     },
   ],
   "Program Isidental": [
@@ -162,17 +167,190 @@ const programData = {
       images: ["/assets/images/mou.jpeg"],
       description: "Sebagai bagian dari program pemberdayaan UMKM, tim KKN 14 melakukan penyerahan MoU inovasi kemasan kepada pelaku usaha tape di Desa Candibinangun. Kegiatan ini menjadi langkah awal dalam mendukung peningkatan kualitas produk lokal melalui desain kemasan yang lebih menarik dan sesuai dengan kebutuhan pasar. Penandatanganan MoU ini juga menandai komitmen bersama antara mahasiswa dan pelaku usaha untuk terus berinovasi serta mengembangkan potensi ekonomi desa secara berkelanjutan.",
     },
-    /*{
-      title: "Mitigasi Stunting",
-      images: ["/assets/images/sosialisasi.jpeg"],
-      description: "Penyuluhan dan pembagian makanan sehat untuk pencegahan stunting.",
-    },
     {
+      title: "Mitigasi Stunting",
+      videos: ["/assets/videos/mitigasi-stunting.mp4"],
+      thumbnail: "/assets/images/mitigasi-stunting-thumbnail.jpeg",
+      type: "video",
+      description: "Mitigasi stunting di Desa Candibinangun dilakukan oleh Ibu-Ibu dan Tim KKN 14 Universitas Yudharta Pasuruan melalui video edukasi gizi dan kesehatan kepada ibu dan anak. Kegiatan ini bertujuan untuk meningkatkan kesadaran masyarakat akan pentingnya nutrisi yang baik dalam mencegah stunting. Dengan pendekatan yang interaktif, diharapkan informasi yang disampaikan dapat diterima dengan baik dan diterapkan dalam kehidupan sehari-hari.",
+    },
+    /*{
       title: "Company Profile",
-      images: ["/assets/images/sosialisasi.jpeg"],
-      description: "Pembuatan video dan desain profil usaha tape yang siap untuk promosi.",
+      videos: ["/assets/videos/.mp4"],
+      thumbnail: "/assets/images/company-profile-thumbnail.jpeg", 
+      type: "video",
+      description: "Company Profile Desa Candibinangun yang dibuat oleh Tim KKN 14 Universitas Yudharta Pasuruan. Video ini bertujuan untuk memperkenalkan potensi desa, budaya, dan kegiatan masyarakat kepada khalayak luas. Dengan visual yang menarik dan narasi yang informatif, diharapkan video ini dapat menjadi media promosi yang efektif untuk menarik perhatian.",
+      location: "Desa Candibinangun",
     },*/
   ],
+};
+
+
+// Video Player Component
+const VideoPlayer = ({ src, thumbnail, title, className = "Play" }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showControls, setShowControls] = useState(true);
+  const [videoRef, setVideoRef] = useState(null);
+
+  const togglePlay = (event) => {
+    event.stopPropagation();
+    if (videoRef) {
+      if (videoRef.paused) {
+        videoRef.play().then(() => {
+          setIsPlaying(true);
+          setShowControls(false);
+        }).catch((error) => {
+          console.error('Error playing video:', error);
+        });
+      } else {
+        videoRef.pause();
+        setIsPlaying(false);
+        setShowControls(true);
+      }
+    }
+  };
+
+  const handleVideoClick = (event) => {
+    event.stopPropagation();
+    togglePlay(event);
+  };
+
+  return (
+    <div className={`relative video-container ${className}`}>
+      <video
+        ref={setVideoRef}
+        className="w-full h-full object-cover rounded-xl cursor-pointer"
+        poster={thumbnail}
+        onPlay={() => {
+          setIsPlaying(true);
+          setShowControls(false);
+        }}
+        onPause={() => {
+          setIsPlaying(false);
+          setShowControls(true);
+        }}
+        onEnded={() => {
+          setIsPlaying(false);
+          setShowControls(true);
+        }}
+        onClick={handleVideoClick}
+        controls={false}
+        preload="metadata"
+        playsInline
+        muted={false}
+        onError={(e) => {
+          console.error('Video failed to load:', e);
+        }}
+      >
+        <source src={src} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
+      {/* Overlay Controls */}
+      {showControls && (
+        <div 
+          className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-xl cursor-pointer transition-opacity duration-300"
+          onClick={handleVideoClick}
+        >
+          <button
+            onClick={togglePlay}
+            className="w-16 h-16 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-lg"
+          >
+            {isPlaying ? (
+              <Pause className="w-8 h-8 text-slate-800" />
+            ) : (
+              <Play className="w-8 h-8 text-slate-800 ml-1" />
+            )}
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Media Display Component
+const MediaDisplay = ({ item, className = "" }) => {
+  if (item.type === "video") {
+    return (
+      <VideoPlayer
+        src={item.videos[0]}
+        thumbnail={item.thumbnail}
+        title={item.title}
+        className={className}
+      />
+    );
+  } else {
+    return (
+      <img
+        src={item.images[0]}
+        alt={item.title}
+        className={`${className} object-cover group-hover:scale-110 transition-transform duration-700`}
+        onError={(e) => {
+          e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk0YTNiOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
+        }}
+      />
+    );
+  }
+};
+
+// Modal Media Display Component
+const ModalMediaDisplay = ({ item, className = "" }) => {
+  const [videoRef, setVideoRef] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  if (item.type === "video") {
+    return (
+      <div className="relative">
+        <video
+          ref={setVideoRef}
+          className={`${className} object-contain rounded-xl shadow-2xl bg-gradient-to-br from-slate-700 to-slate-600`}
+          poster={item.thumbnail}
+          controls
+          preload="metadata"
+          playsInline
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+          onEnded={() => setIsPlaying(false)}
+          onError={(e) => {
+            console.error('Video failed to load in modal:', e);
+          }}
+        >
+          <source src={item.videos[0]} type="video/mp4" />
+          <source src={item.videos[0].replace('.mp4', '.webm')} type="video/webm" />
+          <source src={item.videos[0].replace('.mp4', '.ogg')} type="video/ogg" />
+          Your browser does not support the video tag.
+        </video>
+        {item.duration && (
+          <div className="absolute top-4 right-4 bg-red-500/90 text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center">
+            <Play className="w-4 h-4 mr-1" />
+            {item.duration}
+          </div>
+        )}
+        
+        {/* Fallback message if video fails */}
+        <div className="absolute inset-0 flex items-center justify-center bg-slate-800 rounded-xl" style={{ display: 'none' }} id="video-fallback">
+          <div className="text-center text-white p-8">
+            <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Play className="w-8 h-8" />
+            </div>
+            <p className="text-lg font-medium mb-2">Video tidak dapat dimuat</p>
+            <p className="text-sm text-slate-300">Periksa koneksi internet atau format video</p>
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <img
+        src={item.images[0]}
+        alt={item.title}
+        className={`${className} object-contain rounded-xl shadow-2xl bg-gradient-to-br from-slate-700 to-slate-600`}
+        onError={(e) => {
+          e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk0YTNiOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
+        }}
+      />
+    );
+  }
 };
 
 export default function Kegiatan() {
@@ -319,13 +497,9 @@ export default function Kegiatan() {
                         >
                           {/* Image Container */}
                           <div className="relative overflow-hidden">
-                            <img
-                              src={item.images[0]}
-                              alt={item.title}
-                              className="w-full h-48 sm:h-52 lg:h-56 object-cover group-hover:scale-110 transition-transform duration-700"
-                              onError={(e) => {
-                                e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk0YTNiOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
-                              }}
+                            <MediaDisplay 
+                              item={item} 
+                              className="w-full h-48 sm:h-52 lg:h-56"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                           </div>
@@ -361,7 +535,7 @@ export default function Kegiatan() {
                   </motion.div>
                 ))
               ) : (
-                // Render Normal Items (Program Kerja Utama)
+                // Render Normal Items (Program Kerja Utama & Program Unggulan)
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
                   {items.map((item, index) => (
                     <motion.div
@@ -379,17 +553,21 @@ export default function Kegiatan() {
                       }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      {/* Image Container */}
+                      {/* Media Container */}
                       <div className="relative overflow-hidden">
-                        <img
-                          src={item.images[0]}
-                          alt={item.title}
-                          className="w-full h-52 sm:h-56 lg:h-60 object-cover group-hover:scale-110 transition-transform duration-700"
-                          onError={(e) => {
-                            e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk0YTNiOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
-                          }}
+                        <MediaDisplay 
+                          item={item} 
+                          className="w-full h-52 sm:h-56 lg:h-60"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />                     
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        
+                        {/* Video Indicator */}
+                        {item.type === "video" && (
+                          <div className="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center">
+                            <Play className="w-3 h-3 mr-1" />
+                            VIDEO
+                          </div>
+                        )}
                       </div>
 
                       {/* Content */}
@@ -403,6 +581,12 @@ export default function Kegiatan() {
                         
                         {/* Meta Info */}
                         <div className="space-y-2">
+                          {item.duration && (
+                            <div className="flex items-center text-xs text-red-300">
+                              <Play className="w-3 h-3 mr-2" />
+                              {item.duration}
+                            </div>
+                          )}
                           {item.date && (
                             <div className="flex items-center text-xs text-emerald-300">
                               <Calendar className="w-3 h-3 mr-2" />
@@ -487,20 +671,16 @@ export default function Kegiatan() {
 
               {/* Content Container */}
               <div className="flex-1 overflow-y-auto p-6 sm:p-8 lg:p-12">
-                {/* Image */}
+                {/* Media */}
                 <motion.div 
                   className="mb-6 sm:mb-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.4 }}
                 >
-                  <img
-                    src={selected.images[0]}
-                    alt={selected.title}
-                    className="w-full max-h-[40vh] sm:max-h-[50vh] lg:max-h-[65vh] object-contain rounded-xl sm:rounded-2xl shadow-2xl bg-gradient-to-br from-slate-700 to-slate-600"
-                    onError={(e) => {
-                      e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk0YTNiOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
-                    }}
+                  <ModalMediaDisplay 
+                    item={selected} 
+                    className="w-full max-h-[40vh] sm:max-h-[50vh] lg:max-h-[65vh]"
                   />
                 </motion.div>
                 
@@ -516,6 +696,12 @@ export default function Kegiatan() {
                   
                   {/* Meta Information Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    {selected.duration && (
+                      <div className="flex items-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                        <Play className="w-4 h-4 text-red-400 mr-2" />
+                        <span className="text-sm text-slate-300">Durasi: {selected.duration}</span>
+                      </div>
+                    )}
                     {selected.date && (
                       <div className="flex items-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
                         <Calendar className="w-4 h-4 text-emerald-400 mr-2" />
@@ -629,4 +815,3 @@ export default function Kegiatan() {
     </div>
   );
 }
-                
